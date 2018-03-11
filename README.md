@@ -9,8 +9,10 @@ This project needs crons to be set up, so it can get new stock prices every day.
 ```
 
 ## TODO LIST
+Portfolio VIEW BETTER FUKING JSON AND NAME
 Settings local y produccion (que total solo lo correre en mi maquina)
-Portfolio actions
+Portfolio actions (And tests)
+Portfolios deberian tener un id random para no edirlos por nombre o id real.
 Json views
 Angular proj
 graphs

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TEST</title>
+</head>
+<body>
+	
+	<button id="makecall">
+		Llamar
+	</button>
+
+	<script>
+
+	var AA;
+
+	var CALLBACKEND = function() {
+		var request = new XMLHttpRequest();
+		request.open('GET', 'http://127.0.0.1:8000/get_all_portfolio_stock_data/mars2020/', true);
+
+		request.onload = function() {
+		  if (request.status >= 200 && request.status < 400) {
+		    var data = JSON.parse(request.responseText);
+		   	// data to json
+		   	AA = data;
+
+		   	for (ticker in data){
+		   		for (var i=0; i<data[ticker].length; i++){
+		   			console.log('ticker=', ticker, data[ticker][i]);
+		   		}
+		   		console.log('\n');
+		   	}
+
+		  } else {
+
+		  }
+		};
+
+		request.onerror = function() {
+		};
+
+		request.send();
+	}
+
+	document.querySelector('#makecall').addEventListener('click', ()=> { CALLBACKEND(); });
+	</script>
+
+</body>
+</html>

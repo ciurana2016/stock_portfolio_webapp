@@ -11,7 +11,7 @@ class PortfolioStockAction(models.Model):
 	buy = models.BooleanField()
 	sell = models.BooleanField()
 	action_execution_time = models.DateField(auto_now=True)
-	date = models.DateField()
+	date = models.DateTimeField()
 	amount = models.IntegerField()
 	value_at_action_time = models.FloatField(default=0.0)
 	currency = models.CharField(max_length=10, default='USD')
