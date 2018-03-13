@@ -2,4 +2,5 @@
 
 db.sqlite3
 env
+venv
 spw_backend/*/migrations
